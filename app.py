@@ -31,18 +31,20 @@ def predict():
 		if c1:
 			k1=k.loc[k['Company']=='O2']
 			P=P.append(k1,ignore_index=True)
-		if c2:
-			k2=k.loc[k['Company']=='Safaricorn_Care']
+		elif c2:
+			k2=k.loc[k['Company']=='Safaricom_Care']
 			P=P.append(k2,ignore_index=True)
-		if c3:
+		elif c3:
 			k3=k.loc[k['Company']=='VerizonSupport']
 			P=P.append(k3,ignore_index=True)
-		if c4:
+		elif c4:
 			k4=k.loc[k['Company']=='idea_cares']
 			P=P.append(k4,ignore_index=True)
-		if c5:
+		elif c5:
 			k5=k.loc[k['Company']=='sprintcare']
 			P=P.append(k5,ignore_index=True)
+		else
+			P=P.append(K,ignore_index=True)
 		P=P.to_html()
 		y= x.print_topics()
 		z=pd.DataFrame(y)
