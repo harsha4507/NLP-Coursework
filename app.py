@@ -48,7 +48,7 @@ def predict():
 			k5=k.loc[k['Company']=='sprintcare']
 			P=P.append(k5,ignore_index=True)
 			a=1
-		if a=0:
+		if a==0:
 			P=P.append(k,ignore_index=True)
 		P=P.to_html()
 		y= x.print_topics()
