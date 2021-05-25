@@ -31,25 +31,30 @@ def predict():
 		if c1:
 			k1=k.loc[k['Company']=='O2']
 			P=P.append(k1,ignore_index=True)
-		elif c2:
+			a=1
+		if c2:
 			k2=k.loc[k['Company']=='Safaricom_Care']
 			P=P.append(k2,ignore_index=True)
-		elif c3:
+			a=1
+		if c3:
 			k3=k.loc[k['Company']=='VerizonSupport']
 			P=P.append(k3,ignore_index=True)
-		elif c4:
+			a=1
+		if c4:
 			k4=k.loc[k['Company']=='idea_cares']
 			P=P.append(k4,ignore_index=True)
-		elif c5:
+			a=1
+		if c5:
 			k5=k.loc[k['Company']=='sprintcare']
 			P=P.append(k5,ignore_index=True)
-		else:
+			a=1
+		if a=0:
 			P=P.append(k,ignore_index=True)
 		P=P.to_html()
 		y= x.print_topics()
 		z=pd.DataFrame(y)
 		z=z.to_html()
-	return render_template('result.html',predict=z, pre=a,df=P)
+	return render_template('result.html',predict=z,df=P)
 
 if __name__ == '__main__':
 	app.run(debug=True)
