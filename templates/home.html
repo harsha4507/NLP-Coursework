@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Natural Language Processing Coursework
+		</div>
+		<h2><center>Project Title</center</h2>
+		
+	</div>
+	</header>
+	<img src="C:\Users\sk01736\OneDrive - University of Surrey\Documents\pasted.png" 
+		style="position:absolute; top:10px; right:30px; border:none;"
+       		width="200" 
+       		height="75" 
+       	/>
+	<div class="ml-container">
+		<p>Choose from the list of companies</p>
+		<form action="{{ url_for('predict')}}" method="POST">
+ 			 <input type="checkbox" id="c1" name="c1" value="C1">
+ 			 <label for="c1"> Company 1</label><br>
+			 <input type="checkbox" id="c2" name="c2" value="C2">
+			  <label for="c2"> Company 2</label><br>
+			  <input type="checkbox" id="c3" name="c3" value="C3">
+			  <label for="c3"> Company 3</label><br><br>
+			  <input type="submit" value="Submit">
+		</form>
+	</div>
+
+</body>
+</html>
