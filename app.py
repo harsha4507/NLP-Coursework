@@ -1,7 +1,11 @@
 from flask import Flask,render_template,url_for,request
 import pandas as pd 
 import pickle
-
+import gensim
+import gensim.corpora as corpora
+import gensim.models as models
+from gensim.test.utils import common_corpus, common_dictionary
+from gensim.models import CoherenceModel
 
 app = Flask(__name__)
 
