@@ -4,15 +4,15 @@ import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 #from sklearn.externals import joblib
-import gensim
-import gensim.corpora as corpora
-import gensim.models as models
-from gensim.test.utils import common_corpus, common_dictionary
-from gensim.models import CoherenceModel
-import pyLDAvis.gensim_models
+#import gensim
+#import gensim.corpora as corpora
+#import gensim.models as models
+#from gensim.test.utils import common_corpus, common_dictionary
+#from gensim.models import CoherenceModel
+#import pyLDAvis.gensim_models
 import pickle
-import pyLDAvis
-import matplotlib.pyplot as plt
+#import pyLDAvis
+#import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
