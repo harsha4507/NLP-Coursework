@@ -4,6 +4,11 @@
 	<title>Home</title>
 	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+<img src="https://cdn.worldvectorlogo.com/logos/university-of-surrey.svg"
+		style="position:absolute; top:10px; right:30px; border:none;"
+       		width="200" 
+       		height="75" 
+       	/>
 </head>
 <body>
 
@@ -16,20 +21,20 @@
 		
 	</div>
 	</header>
-	<img src="C:\Users\sk01736\OneDrive - University of Surrey\Documents\pasted.png" 
-		style="position:absolute; top:10px; right:30px; border:none;"
-       		width="200" 
-       		height="75" 
-       	/>
+	
 	<div class="ml-container">
-		<p>Choose from the list of companies</p>
+		<p><b>Choose from the list of companies</b></p>
 		<form action="{{ url_for('predict')}}" method="POST">
  			 <input type="checkbox" id="c1" name="c1" value="C1">
  			 <label for="c1"> Company 1</label><br>
 			 <input type="checkbox" id="c2" name="c2" value="C2">
 			  <label for="c2"> Company 2</label><br>
 			  <input type="checkbox" id="c3" name="c3" value="C3">
-			  <label for="c3"> Company 3</label><br><br>
+			  <label for="c3"> Company 3</label><br>
+			  <input type="checkbox" id="c4" name="c4" value="C4">
+			  <label for="c4"> Company 4</label><br>
+			  <input type="checkbox" id="c5" name="c5" value="C5">
+			  <label for="c5"> Company 5</label><br>
 			  <input type="submit" value="Submit">
 		</form>
 	</div>
