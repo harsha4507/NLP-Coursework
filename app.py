@@ -1,6 +1,7 @@
 from flask import Flask,render_template,url_for,request
 import pandas as pd 
 import pickle
+from smart_open import open
 
 app = Flask(__name__)
 
