@@ -9,7 +9,7 @@ def home():
 	return render_template('home.html')
 @app.route('/predict',methods=['GET','POST'])
 def predict():
-	x = pickle.load("model.pkl","rb")
+	x = pickle.load(open("model.pkl","rb"))
 	#model1 = open('model.pkl','rb')
 	df1= open('dataframe.pkl','rb')
 	c1=request.form.get('c1')
