@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
 import gensim
 import gensim.corpora as corpora
 import gensim.models as models
