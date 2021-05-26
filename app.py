@@ -9,13 +9,13 @@ from gensim.models import CoherenceModel
 
 app = Flask(__name__)
 Hist=[]
+Hist_session=[]
 
 @app.route('/')
 def home():
 	return render_template('home.html')
 @app.route('/predict',methods=['GET','POST'])
 def predict():
-	Hist_session=[]
 	x = pickle.load(open("model.pkl","rb"))
 	#model1 = open('model.pkl','rb')
 	df1= open('dataframe.pkl','rb')
