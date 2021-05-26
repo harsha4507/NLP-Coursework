@@ -8,12 +8,14 @@ from gensim.test.utils import common_corpus, common_dictionary
 from gensim.models import CoherenceModel
 
 app = Flask(__name__)
+Hist=[]
 
 @app.route('/')
 def home():
 	return render_template('home.html')
 @app.route('/predict',methods=['GET','POST'])
 def predict():
+	Hist_session=[]
 	x = pickle.load(open("model.pkl","rb"))
 	#model1 = open('model.pkl','rb')
 	df1= open('dataframe.pkl','rb')
@@ -32,29 +34,40 @@ def predict():
 			k1=k.loc[k['Company']=='O2']
 			P=P.append(k1,ignore_index=True)
 			a=1
+			Hist_session(c1)
 		if c2:
 			k2=k.loc[k['Company']=='Safaricom_Care']
 			P=P.append(k2,ignore_index=True)
 			a=1
+			Hist_session(c2)
 		if c3:
 			k3=k.loc[k['Company']=='VerizonSupport']
 			P=P.append(k3,ignore_index=True)
 			a=1
+			Hist_session(c3)
 		if c4:
 			k4=k.loc[k['Company']=='idea_cares']
 			P=P.append(k4,ignore_index=True)
 			a=1
+			Hist_session(c4)
 		if c5:
 			k5=k.loc[k['Company']=='sprintcare']
 			P=P.append(k5,ignore_index=True)
 			a=1
+			Hist_session(c5)
 		if a==0:
 			P=P.append(k,ignore_index=True)
+			Hist_session([c1,c2,c3,c4,c5])
 		P=P.to_html()
 		y= x.print_topics()
 		z=pd.DataFrame(y)
 		z=z.to_html()
+		Hist.append(Hist_session)
 	return render_template('result.html',predict=z,df=P)
+
+@app.route('/History')
+def History():
+	return render_template("History.html",len=len(Hist),History=Hist)
 
 if __name__ == '__main__':
 	app.run(debug=True)
