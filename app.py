@@ -58,6 +58,7 @@ def predict():
 		if a==0:
 			P=P.append(k,ignore_index=True)
 			Hist_session.append([c1,c2,c3,c4,c5])
+	
 		P=P.to_html()
 		y= x.print_topics()
 		z=pd.DataFrame(y)
